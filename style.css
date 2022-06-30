@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@300&display=swap');
+body{
+    background-color: #2d2d2e;
+    font-family: 'Gantari', sans-serif;
+    margin: 0;
+}
+.profile-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    height: auto;
+    max-width: 130px;
+
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+}
+.profile-name {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Signika', sans-serif;
+    font-size: 28px;
+    animation: color-change 50s infinite;
+
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid #96445e;
+    border-width: 2px;
+
+    width: 290px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-radius: 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 18px;
+}
+a {
+    text-decoration: none;
+    transition: color 1s;
+    color: white;
+}
+a:hover {
+    color: red;
+    background-color: white;
+}
+.bottom-border {
+    position: relative;
+    padding: 300px;
+    font-family: 'Signika', sans-serif;
+    font-size: 28px;
+    color: white;
+    background-color: red;
+}
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+  }
+
+.explain-text {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.notice {
+    color: #82817f;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 20px;
+    
+}
