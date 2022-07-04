@@ -12,6 +12,9 @@ body{
     margin-top: 10%;
     height: auto;
     max-width: 130px;
+    width: auto;
+    height: auto;
+    margin: auto;
 
     border-radius: 50%;
     border-style: solid;
@@ -22,8 +25,7 @@ body{
     padding: 30px;
     font-family: 'Signika', sans-serif;
     font-size: 28px;
-    animation: color-change 40s infinite;
-
+    color: white;
 }
 
 .links {
@@ -58,12 +60,6 @@ a:hover {
     color: white;
     background-color: red;
 }
-@keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-  }
-
 .explain-text {
     color: white;
     text-align: center;
@@ -76,4 +72,18 @@ a:hover {
     font-size: 16px;
     padding-top: 20px;
     
+}
+
+.disc-text {
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.discord-emb {
+    position: relative;
+    max-width: 900px;
+    width: auto;
+    height: auto;
+    margin: auto;
 }
