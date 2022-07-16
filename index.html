@@ -15,19 +15,37 @@
     <!--1. Profile pic-->
     <img class="profile-pic" src="https://media3.giphy.com/media/ViGwJOV6EWAKs/giphy.webp?cid=ecf05e4773nyz8vqdl0c0whqcmcc37b2vqce542hal6mzivc&rid=giphy.webp&ct=g" alt="pfp">
     <!--2. Profile name-->
-    <div class="profile-name">Antiparty</div>
+    <div class="profile-name">
+        <h1>Antiparty</h1>
+        <div class="typing-effect">
+            <p>I'm a <span class="auto-type"></span></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["software engineer ^1500", "Streamer ^1500", "Content Creator ^1500"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true
+        })
+    </script>
     <!--3. Links-->
     <a href="https://Twitch.tv/Antiparty" class="links" target="_blank_"><i class="fa-brands fa-twitch"> Twitch</i></a>
     <a href="https://www.youtube.com/channel/UCou82Q2T0gKgy2iD1RgNIOg" class="links" target="_blank_"><i class="fa-brands fa-youtube"> Youtube</i></a>
     <a href="https://discord.gg/3v6Zz98ZpC" class="links" target="_blank_"><i class="fa-brands fa-discord"> Discord</i></a>
     <a href="https://twitter.com/AntiParty_" class="links" target="_blank_"><i class="fa-brands fa-twitter"></i> Twitter</a>
 
-    <p class="explain-text">Antiparty created this website on their own. <br>Created entirely with HTML and CSS<br> contains all of my social media! Join my discord, I'm always available if you want to talk to me.</p>
-    <h2 class="notice">Notice: This website was designed for mobile users.</h2>
-    <div class="discord-emb">
-        <h1 class="disc-text">My Discord preview!</h1>
-        <widgetbot server="898844149124587530" channel="982164783904198656" width="800" height="600"></widgetbot>
-        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+    <!--4. About me-->
+    <div class="about--me">
+        <h1 class="abt--me_name">About Me!</h1>
+        <div class="about--me__para">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse officia nisi quod quia sed voluptatum tenetur dolor earum unde tempore culpa facilis excepturi, facere rem, vitae sunt dolorum laborum.</p>
+        </div>
+    </div>
+    <div class="ending-text">
+        <p class="explain-text">Antiparty created this website on their own. <br>Created entirely with HTML and CSS<br> contains all of my social media! Join my discord, I'm always available if you want to talk to me.</p>
+        <h2 class="notice">Notice: This website was designed for mobile users.</h2>
     </div>
 </body>
 </html>
