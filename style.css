@@ -2,12 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@300&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@1,300&family=Poppins:wght@300&display=swap');
+
 body{
     font-family: 'Gantari', sans-serif;
     margin: 0;
     margin-top: 20;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,9,121,1) 44%, rgba(4,119,143,1) 100%);
+    background: #2C3639;
 }
+
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #2C3333;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #c436f7;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */ /* creates padding around scroll thumb */
+  }
 .profile-pic {
     display: block;
     margin-left: auto;
@@ -70,6 +86,10 @@ body{
     animation: animate-profile-pic 800ms;
 }
 
+a.links {
+    font-family: 'Poppins', sans-serif;
+}
+
 a {
     text-decoration: none;
     transition: color 1s;
@@ -120,7 +140,7 @@ a:hover {
 }
 .ending-text {
     background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,9,121,1) 44%, rgba(4,119,143,1) 100%);
+    background: #2C3333;
     height: 150px;
 }
 
