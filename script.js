@@ -1,9 +1,6 @@
 var slidePosition = 1;
 SlideShow(slidePosition);
 
-window.addEventListener('load', function() {
-    Slideshow(slidePosition);
-  });
 // forward/Back controls
 function plusSlides(n) {
   SlideShow(slidePosition += n);
