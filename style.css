@@ -1,322 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arima:wght@300&display=swap');
-
-
-@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@1,300&family=Poppins:wght@300&display=swap');
-
-body{
-    font-family: 'Gantari', sans-serif;
-    margin: 0;
-    margin-top: 20;
-    background: #2C3639;
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  color: #F2F2F2;
 }
 
-
-body::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #2C3333;        /* color of the tracking area */
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #c436f7;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */ /* creates padding around scroll thumb */
-  }
-.profile-pic {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    height: auto;
-    max-width: 130px;
-    width: auto;
-    height: auto;
-    margin: auto;
-
-    border-radius: 50%;
-    border-style: solid;
-    border-color: white;
-    animation: animate-profile-pic 800ms 200ms backwards;
-}
-.profile-name {
-    text-align: center;
-    padding: 30px;
-    font-family: 'Signika', sans-serif;
-    font-size: 28px;
-    color: white;
-    animation: animate-profile-pic 800ms 200ms backwards;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.profile-name h1 {
-    text-shadow: 0px 2px 2px #c436f7;
-    animation: animate-profile-pic 800ms 200ms backwards;
+h1 {
+  margin-bottom: 25px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.typing-effect {
-    text-align: center;
-    size: 300px;
-    font-family: 'Signika', sans-serif;
-    font-size: 28px;
-    color: white;
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.auto-type {
-    color: #c436f7;
+li {
+  margin-bottom: 15px;
+  width: 200px;
+  padding: 20px;
+  background-color: #444;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 
-.links {
-    text-align: center;
-    line-height: 28px;
-    margin-top: 20px;
-    border: 1px solid #c436f7;
-    border-width: 2px;
-
-    width: 300;
-    height: 30px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-
-    border-radius: 40px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 25px;
-    animation: animate-profile-pic 800ms;
-}
-
-a.links {
-    font-family: 'Poppins', sans-serif;
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.2);
 }
 
 a {
-    text-decoration: none;
-    transition: color 1s;
-    color: white;
-}
-a:hover {
-    color: black;
-    background-color: white;
-}
-.bottom-border {
-    position: relative;
-    padding: 300px;
-    font-family: 'Signika', sans-serif;
-    font-size: 28px;
-    color: white;
-    background-color: red;
-}
-.explain-text {
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    padding-top: 20px;
-}
-.notice {
-    color: #82817f;
-    text-align: center;
-    font-size: 16px;
-    padding-top: 20px;
-    
-}
-.about--me {
-    text-align: center;
-    color: #fff;
-    margin-top: 60px;
-    font-size: 16px;
-
-    max-width: 500px;
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.abt--me_name {
-    text-shadow: 0px 2px 2px #c436f7;
-}
-.about--me__para {
-    padding-bottom: 20px;
-}
-.ending-text {
-    background: rgb(2,0,36);
-    background: #2C3333;
-    height: 150px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
 }
 
-
-
-
-.carousel {
-    position: relative;
-  }
-  
-  .carousel__item {
-    height: 300px;
-    background: grey;
-    padding: 1em;
-    font-family: "Quicksand", sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-    color: #ffffff;
-    display: none;
-  }
-  
-  .carousel__item--selected {
-    display: block;
-  }
-  
-  .carousel__nav {
-    width: 100%;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-  }
-  
-  .carousel__button {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .carousel__button--selected {
-    background: rgba(255, 255, 255, 0.5);
-  }
-  
-  .games--stream {
-    text-align: center;
-    padding: 30px;
-    font-family: 'Signika', sans-serif;
-    font-size: 14px;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    animation: animate-profile-pic 800ms 200ms backwards;
-  }
-
-  .games--stream h1 {
-    text-shadow: 0px 2px 2px #c436f7;
-    animation: animate-profile-pic 800ms 200ms backwards;
+.about-me {
+  margin-top: 50px;
+  width: 80%;
+  padding: 20px;
+  background-color: #444;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
 }
 
-  /* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
-  
-  /* Make the images invisible by default */
-  .Containers {
-    display: none;
-  }
-  
-  /* forward & Back buttons */
-  .Back, .forward {
-    cursor: pointer;
-    position: absolute;
-    top: 48%;
-    width: auto;
-    margin-top: -23px;
-    padding: 17px;
-    color: grey;
-    font-weight: bold;
-    font-size: 19px;
-    transition: 0.4s ease;
-    border-radius: 0 5px 5px 0;
-    user-select: none;
-  }
-  
-  /* Place the "forward button" to the right */
-  .forward {
-    right: 0;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  /*when the user hovers,add a black background with some little opacity */
-  .Back:hover, .forward:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
-  /* Caption Info */
-  .Info {
-    color: #e3e3e3;
-    font-size: 16px;
-    padding: 10px 14px;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Worknumbering (1/3 etc) */
-  .MessageInfo {
-    color: #f2f2f3;
-    font-size: 14px;
-    padding: 10px 14px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* The circles or bullets and indicators */
-  .dots {
-    cursor: pointer;
-    height: 16px;
-    width: 16px;
-    margin: 0 3px;
-    background-color: #acc;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.5s ease;
-  }
-  
-  .enable, .dots:hover {
-    background-color: #fdfd20;
-  }
-  
-  /* Faint animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.4s;
-    animation-name: fade;
-    animation-duration: 1.4s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .5}
-    to {opacity: 2}
-  }
-  
-  @keyframes fade {
-    from {opacity: .5}
-    to {opacity: 2}
-  }
-/* Css Animations */
-@keyframes animate-profile-pic {
-    0% {
-        transform: scale(0);
-    } 
-    80% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+.about-me h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
-@keyframes scale-hover {
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.2);
-    }
-    100%{
-        transform: scale(2);
-    }
+
+.about-me p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+}
+
+.pfp img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.pfp img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.container ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container li {
+  margin: 0 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  flex-direction: row;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-me {
+  margin-top: 30px;
+  text-align: center;
+  width: 80%;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 10px;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
 }
