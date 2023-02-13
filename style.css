@@ -15,9 +15,10 @@ body {
 
 h1 {
   margin-bottom: 25px;
-  font-size: 36px;
+  font-size: 48px;
   font-weight: bold;
   text-align: center;
+  transition: 0.9s;
 }
 
 ul {
@@ -52,38 +53,16 @@ a {
   display: block;
 }
 
-.about-me {
-  margin-top: 50px;
-  width: 80%;
-  padding: 20px;
-  background-color: #444;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  text-align: center;
-}
-
-.about-me h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.about-me p {
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: left;
-  margin: 0;
-}
-
 .pfp img {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 80%;
 }
 .pfp img {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 100%;
+  border:1px solid #a546e4;
   display: inline-block;
 }
 
@@ -122,16 +101,22 @@ li {
   width: 80%;
 }
 
-@media (max-width: 700px) {
-  .container {
-    padding: 10px;
-  }
+section {
+  padding: 20px;
+}
 
+h2 {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
   ul {
     flex-direction: column;
   }
 
   li {
-    margin-bottom: 20px;
+    margin-bottom: 400px;
+    width: 100%;
+    text-align: center;
   }
 }
