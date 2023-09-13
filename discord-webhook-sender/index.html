@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="webhook-url" placeholder="Enter Discord Webhook URL"/>
+    <input type="text" id="webhook-content" placeholder="Enter message to send"/>
+    <button id="send-webhook-button">Send Webhook</button>
+
+    <p id="error-popup"></p>
+    <p id="green-popup"></p>
+    <script>
+        // Replace with your YouTube channel ID
+        const CHANNEL_ID = "UCou82Q2T0gKgy2iD1RgNIOg";
+        const WEBHOOK_URL =
+          "https://discord.com/api/webhooks/1151595804407103489/OOSllmnGIK8KIMzBA4sdbov6dPg_Ij_V1hSLyAAk41o4_fLy4Bk1TpHtSwXxnfZtVFUp";
+  
+        
+        // Function to send a POST request to Discord webhook
+        function sendWebhook() {
+          const webhookUrl = document.getElementById("webhook-url").value;
+          const payload = {
+            content: `${document.getElementById("webhook-content").value}`
+          };
+  
+          fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                console.error("Error sending webhook:", response.statusText);
+                document.getElementById("error-popup").textContent = response.statusText;
+              } else {
+                console.log("Webhook sent successfully!");
+                document.getElementById("green-popup").textContent = "Webhook sent successfully!";
+              }
+            })
+            .catch((error) => {
+              console.error("Error sending webhook:", error);
+            });
+        }
+        // Call the function to fetch and update the subscriber count
+  
+        // Update the count every 60 seconds (adjust as needed)
+        document.getElementById("send-webhook-button").addEventListener("click", sendWebhook);
+      </script>
+</body>
+</html>
