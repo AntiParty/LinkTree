@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Linktree Page</title>
-    <script
-      src="https://kit.fontawesome.com/6ecc35d499.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="webhook-url" placeholder="Enter Discord Webhook URL"/>
+    <input type="text" id="webhook-content" placeholder="Enter message to send"/>
+    <button id="send-webhook-button">Send Webhook</button>
 
-    <!--Discord-stuff-->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Antiparty's LinkTree" />
-    <meta
-      property="og:description"
-      content="A place for all Antiparty's links/Social medias!"
-    />
-    <meta property="og:url" content="https://antiparty.github.io/LinkTree/" />
-    <meta
-      property="og:image"
-      content="https://www.dreamworks.com/images/temp/explore/dragons/toothless/profile.png"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="profile">
-        <img
-          src="https://imgs.search.brave.com/FMCLCwUNbh_vKq1y-CKu7Z6ValMkTOBxJO1YVlw6eic/rs:fit:500:500:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzgxLzQz/LzkxLzgxNDM5MTJk/NDA4YzI3NDg1N2Ni/YjliMDA5MDY1ODIx/LmdpZg.gif"
-          alt="Profile Picture"
-        />
-        <h1>Antiparty</h1>
-        <p>
-          Valorant Content Creator <br />400+
-          <span class="testing-red">YouTube</span> <br />15,000+<span
-            class="testing-blue"
-            >Tiktok
-          </span>
-          <br />Business Inquires: antiparty99@gmail.com
-        </p>
-      </div>
-      <div class="links">
-        <ul>
-          <li>
-            <a href="https://twitter.com/antiparty_"
-              ><i class="fab fa-twitter"></i> Twitter</a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/channel/UCou82Q2T0gKgy2iD1RgNIOg"
-              ><i class="fab fa-youtube"></i> Youtube</a
-            >
-          </li>
-          <li>
-            <a href="https://www.twitch.tv/antiparty"
-              ><i class="fa-brands fa-twitch"></i> Twitch</a
-            >
-          </li>
-          <li>
-            <a href="https://discord.gg/gY7eP4XVus"
-              ><i class="fa-brands fa-discord"></i> Discord</a
-            >
-          </li>
-          <li>
-            <a href="mailto:antiparty99@gmail.com"
-              ><i class="fas fa-envelope"></i>Contact</a
-            >
-          </li>
-          <li>
-            <a href="./discord-webhook-sender/index.html" target="_blank"
-              ><i class="fa-solid fa-link"></i>Discord webhook Sender</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </body>
+    <p id="error-popup"></p>
+    <p id="green-popup"></p>
+    <script>
+        // Replace with your YouTube channel ID
+        const CHANNEL_ID = "UCou82Q2T0gKgy2iD1RgNIOg";
+        const WEBHOOK_URL =
+          "https://discord.com/api/webhooks/1151595804407103489/OOSllmnGIK8KIMzBA4sdbov6dPg_Ij_V1hSLyAAk41o4_fLy4Bk1TpHtSwXxnfZtVFUp";
+  
+        
+        // Function to send a POST request to Discord webhook
+        function sendWebhook() {
+          const webhookUrl = document.getElementById("webhook-url").value;
+          const payload = {
+            content: `${document.getElementById("webhook-content").value}`
+          };
+  
+          fetch(webhookUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                console.error("Error sending webhook:", response.statusText);
+                document.getElementById("error-popup").textContent = response.statusText;
+              } else {
+                console.log("Webhook sent successfully!");
+                document.getElementById("green-popup").textContent = "Webhook sent successfully!";
+              }
+            })
+            .catch((error) => {
+              console.error("Error sending webhook:", error);
+            });
+        }
+        // Call the function to fetch and update the subscriber count
+  
+        // Update the count every 60 seconds (adjust as needed)
+        document.getElementById("send-webhook-button").addEventListener("click", sendWebhook);
+      </script>
+</body>
 </html>
