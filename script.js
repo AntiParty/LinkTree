@@ -1,28 +1,39 @@
-var slidePosition = 1;
-SlideShow(slidePosition);
+// How long you want the animation to take, in ms
+const animationDuration = 2000;
+// Calculate how long each ‘frame’ should last if we want to update the animation 60 times per second
+const frameDuration = 1000 / 60;
+// Use that to calculate how many frames we need to complete the animation
+const totalFrames = Math.round( animationDuration / frameDuration );
+// An ease-out function that slows the count as it progresses
+const easeOutQuad = t => t * ( 2 - t );
 
-// forward/Back controls
-function plusSlides(n) {
-  SlideShow(slidePosition += n);
-}
+const animateCountUp = el => {
+	let frame = 0;
+	const countTo = parseInt( el.innerHTML, 10 );
+	// Start the animation running 60 times per second
+	const counter = setInterval( () => {
+		frame++;
+		// Calculate our progress as a value between 0 and 1
+		// Pass that value to our easing function to get our
+		// progress on a curve
+		const progress = easeOutQuad( frame / totalFrames );
+		// Use the progress value to calculate the current count
+		const currentCount = Math.round( countTo * progress );
 
-//  images controls
-function currentSlide(n) {
-  SlideShow(slidePosition = n);
-}
+		// If the current count has changed, update the element
+		if ( parseInt( el.innerHTML, 10 ) !== currentCount ) {
+			el.innerHTML = currentCount;
+		}
 
-function SlideShow(n) {
-  var i;
-  var slides = document.getElementsByClassName("Containers");
-  var circles = document.getElementsByClassName("dots");
-  if (n > slides.length) {slidePosition = 1}
-  if (n < 1) {slidePosition = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < circles.length; i++) {
-      circles[i].className = circles[i].className.replace(" enable", "");
-  }
-  slides[slidePosition-1].style.display = "block";
-  circles[slidePosition-1].className += " enable";
-} 
+		// If we’ve reached our last frame, stop the animation
+		if ( frame === totalFrames ) {
+			clearInterval( counter );
+		}
+	}, frameDuration );
+};
+
+// Run the animation on all elements with a class of ‘countup’
+const runAnimations = () => {
+	const countupEls = document.querySelectorAll( '.countup' );
+	countupEls.forEach( animateCountUp );
+};

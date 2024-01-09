@@ -10,6 +10,13 @@ body {
   color: #ffffff;
 }
 
+.testing-red {
+  color: red;
+}
+.testing-blue {
+  color: #5f5ffa;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -24,13 +31,13 @@ body {
   text-align: center;
   margin-bottom: 50px;
 }
-
 .profile img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  border: 3px solid #1da1f2;
 }
 
 .profile h1 {
@@ -60,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
   color: white;
   text-decoration: none;
   border-radius: 20px;
@@ -73,4 +80,8 @@ body {
 }
 
 .links a:hover {
-  background-color: #000}
+  background-color: #000;
+}
+.yellow_class {
+  color: yellow;
+}
