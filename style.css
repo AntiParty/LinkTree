@@ -5,49 +5,85 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: #181818;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1d1d1d, #333333);
   color: #ffffff;
-}
-
-.testing-red {
-  color: red;
-}
-.testing-blue {
-  color: #5f5ffa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
   max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  width: 100%;
+  text-align: center;
 }
 
 .profile {
-  text-align: center;
+  position: relative;
   margin-bottom: 50px;
-}
-.profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid #1da1f2;
+  width: 100%;
+  height: 300px;
+  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2p0amttZ2I2ZGF0dW1tM2J1ejF5eHNyZnJ6Ynp0emMwcDN3dGlidiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KYDNnecoxHtelTuYXt/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile h1 {
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: 600;
   margin-bottom: 10px;
+  z-index: 2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .profile p {
+  font-size: 1.5em;
+  color: #bbbbbb;
+  z-index: 2;
+}
+
+.stats {
+  margin-bottom: 30px;
+}
+
+.stats p {
   font-size: 1.2em;
-  color: gray;
+  color: #eeeeee;
+  line-height: 1.5;
+}
+
+.yellow_class {
+  color: #f5a623;
+}
+
+.testing-red {
+  color: #f44336;
+}
+
+.testing-blue {
+  color: #1DA1F2;
+}
+
+.email-link {
+  color: #f5a623;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.links {
+  width: 100%;
 }
 
 .links ul {
@@ -57,6 +93,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 15px;
 }
 
 .links li {
@@ -66,8 +103,9 @@ body {
 .links a {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #1da1f2;
+  padding: 15px 30px;
+  justify-content: center;
+  background-color: #1DA1F2;
   color: white;
   text-decoration: none;
   border-radius: 20px;
@@ -82,6 +120,10 @@ body {
 .links a:hover {
   background-color: #000;
 }
-.yellow_class {
-  color: yellow;
+
+@media (max-width: 600px) {
+  .links ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }
