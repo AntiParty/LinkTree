@@ -21,7 +21,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          mv stats.json stats.json
           git add stats.json
           git commit -m "Update stats"
           git push
