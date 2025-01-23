@@ -1,0 +1,27 @@
+name: Update Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows you to manually trigger it from the Actions tab
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch YouTube Stats
+        run: |
+          curl -s "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCou82Q2T0gKgy2iD1RgNIOg&key=${{ secrets.YOUTUBE_API_KEY }}" \
+          | jq '.items[0].statistics.subscriberCount' > stats.json
+
+      - name: Commit and Push Stats
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          mv stats.json stats.json
+          git add stats.json
+          git commit -m "Update stats"
+          git push
