@@ -1,6 +1,6 @@
 async function updateStats() {
   try {
-      const response = await fetch('./stats.json');
+      const response = await fetch('/stats.json');
       const data = await response.json();
 
       // Ensure the subscriber count is an integer
