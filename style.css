@@ -9,15 +9,47 @@ body {
   background: linear-gradient(135deg, #1d1d1d, #333333);
   color: #ffffff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+}
+
+nav {
+  background-color: #33333300;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%; /* Ensure nav spans the full width */
+  position: fixed; /* Fix the nav at the top */
+  top: 0; /* Position at the top */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ff6347; /* Change to your preferred hover color */
 }
 
 .container {
   max-width: 800px;
   width: 100%;
   text-align: center;
+  margin-top: 60px; /* Add margin to avoid overlap with the fixed nav */
 }
 
 .profile {
@@ -50,9 +82,11 @@ body {
   color: #bbbbbb;
   z-index: 2;
 }
+
 .testing {
   color: red;
 }
+
 .stats {
   margin-bottom: 30px;
 }
