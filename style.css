@@ -17,22 +17,6 @@ body {
   position: relative;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.9)),
-            radial-gradient(circle at 25% 75%, rgba(8, 8, 8, 0.55), rgba(0, 0, 0, 0.95)),
-            url("https://grainy-gradients.vercel.app/noise.svg");
-  background-repeat: repeat;
-  background-size: 350%;
-  filter: brightness(0.88);
-  opacity: 0.08;
-  animation: grain 6s steps(6) infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
 /* Navigation Styles */
 nav {
   width: 100%;
